@@ -21,7 +21,7 @@ This repository provides 2D procedural example shapes at both basic and advanced
 This repository includes several basic shapes such as line, triangle, polygon, circle, quadratic and sinusoidal. They can be used as a base to be able to create more complex shapes. Following images belong to examples which blends two textures based on those shapes.
 ![Line](Screenshots/Line.png)
 ![Triangle](Screenshots/Triangle.png)
-![Polygon](Screenshots/Polygon.png)
-![Circle](Screenshots/Circle.png)
 ![Quadratic](Screenshots/Quadratic.png)
 ![Sinusoidal](Screenshots/Sinusoidal.png)
+![Circle](Screenshots/Circle.png)
+![Polygon](Screenshots/Polygon.png)
