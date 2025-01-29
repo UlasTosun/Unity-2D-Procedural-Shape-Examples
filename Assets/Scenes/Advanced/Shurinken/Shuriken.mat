@@ -136,6 +136,7 @@ Material:
     - _EdgeColor: {r: 0.7527221, g: 0.75581276, b: 0.759345, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _InnerColor: {r: 0.1605847, g: 0.24754111, b: 0.38341045, a: 1}
+    - _InnerOffset: {r: -0.005, g: -0.005, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

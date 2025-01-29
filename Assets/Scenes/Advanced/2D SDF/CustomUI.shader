@@ -1,4 +1,5 @@
 // Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
+// This shader is a modified version of built-in UI shader. It adds a custom effect to the UI element.
 
 Shader "My Shaders/CustomUI" {
 
@@ -81,6 +82,7 @@ Shader "My Shaders/CustomUI" {
 
             #include "UnityCG.cginc"
             #include "UnityUI.cginc"
+            #include "Assets/Common Shaders/Common.hlsl"
 
             #pragma multi_compile_local _ UNITY_UI_CLIP_RECT
             #pragma multi_compile_local _ UNITY_UI_ALPHACLIP
@@ -127,41 +129,7 @@ Shader "My Shaders/CustomUI" {
             float _Period;
 
 
-
-            // Returns the projected vector of vector1 onto vector2.
-            float2 Project (float2 vector1 , float2 vector2) {
-                // Poor performance version
-                //return (dot(vector1, vector2) / dot(vector2, vector2)) * vector2;
-
-                // Better performance version
-                // Projection magnitude -> v1.v2 / |v2|
-                // Projection direction -> a / |v2|
-                // Projection vector -> (v1.v2 / |v2|) * (v2 / |v2|)
-                // Lets split it into two parts (scalar and vectoral)
-                // scalar -> (v1.v2) / (|v2|^2)
-                // vectoral (direction) -> v2
-                // |v2| = sqrt(v2.x^2 + v2.y^2)
-                // |v2|^2 = v2.x^2 + v2.y^2
-                // so, scalar -> (v1.v2) / (a.x^2 + a.y^2)
-
-                float scalar = dot(vector1, vector2) / (vector2.x * vector2.x + vector2.y * vector2.y);
-                scalar = saturate(scalar);
-                return scalar * vector2;
-            }
-
-
-
-            // Returns the distance of the point uv to the line segment defined by point1 and point2.
-            float DistanceToSegment (float2 uv, float2 point1, float2 point2) {
-                float2 vector1 = uv - point1;
-                float2 vector2 = point2 - point1;
-                float2 projection = Project(vector1, vector2);
-                float2 projectedPoint = point1 + projection;
-                return distance(uv, projectedPoint);
-            }
-
-
-
+            
             v2f vert(appdata_t v) {
                 v2f OUT;
                 UNITY_SETUP_INSTANCE_ID(v);
@@ -212,7 +180,7 @@ Shader "My Shaders/CustomUI" {
                 clip (color.a - 0.001);
                 #endif
 
-                // ADDED BY ME
+                // ADDED BY ME FOR THE CUSTOM EFFECT
                 float offset = lerp(-1, 1, _Time.y % _Period) * _Speed;
 
                 float2 point1 = float2(_Orientation + offset, 0);
