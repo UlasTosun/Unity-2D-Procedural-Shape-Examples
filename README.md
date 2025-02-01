@@ -8,13 +8,13 @@ This repository provides 2D procedural example shapes at both basic and advanced
 ## Advanced Examples
 
 **2D Signed Distance Field (SDF):** This example provides an animation for UI (buttons and images) by using SDFs. It uses a modified version of the built-in UI shader of Unity.
-![2D_SDF](Screenshots/2D_SDF.png)
+![2D_SDF](Screenshots/2D_SDF.png)<br/><br/>
 
 **Star:** It provides an example procedural star shape which is highly customizable (number of corners, inner radius, etc.).
-![Star](Screenshots/Star.png)
+![Star](Screenshots/Star.png)<br/><br/>
 
 **Shurinken:** It provides an example procedural star shape which is highly customizable.
-![Shurinken](Screenshots/Shurinken.png)
+![Shurinken](Screenshots/Shurinken.png)<br/><br/>
 
 ## Basic Examples
 
