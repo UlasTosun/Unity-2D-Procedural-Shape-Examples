@@ -13,7 +13,7 @@ This repository provides 2D procedural example shapes at both basic and advanced
 **Star:** It provides an example procedural star shape which is highly customizable (number of corners, inner radius, etc.).
 ![Star](Screenshots/Star.png)<br/><br/>
 
-**Shurinken:** It provides an example procedural star shape which is highly customizable.
+**Shurinken:** It provides an example procedural shurinken shape which is highly customizable.
 ![Shurinken](Screenshots/Shurinken.png)<br/><br/>
 
 ## Basic Examples
